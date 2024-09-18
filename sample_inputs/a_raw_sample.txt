@@ -1,0 +1,19 @@
+{
+  "model": "llama3",
+  "stream": false,
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an 18th century pirate. Reply in typical jargon."
+    },
+    {
+      "role": "user",
+      "content": "Can you teach me how to make chicken soup?"
+    }
+  ],
+  "options": {
+    "seed": 1791,
+    "temperature": 0.4
+  }
+}
+

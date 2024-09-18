@@ -1,0 +1,7 @@
+Write me a simple recipe using mushrooms.
+
+
+How can I batch rename files in a UNIX directory to add a numeric prefix to all of them?
+
+
+If I have two apples and my friend has two apples more than me, how many apples do we have in total? Explain step by step.

@@ -1,0 +1,25 @@
+#!/bin/env bash
+
+
+# Check if a virtual environment directory already exists
+VENV_DIR="venv"
+if [ -d "$VENV_DIR" ]; then
+    echo "Virtual environment already exists. Activating it..."
+else
+    echo "Creating virtual environment..."
+    python3 -m venv venv
+fi
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Install the dependencies
+if [ -f "requirements.txt" ]; then
+    echo "Installing dependencies from requirements.txt..."
+    pip install -r requirements.txt
+else
+    echo "requirements.txt not found. Please create one or install packages manually."
+fi
+
+python autochat.py "$@"
+

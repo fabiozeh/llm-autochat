@@ -1,0 +1,7 @@
+Hello, how are you doing?
+
+
+I'd like to know how to quantize an embedding model for using it with Ollama.
+
+
+Could you give an example?
