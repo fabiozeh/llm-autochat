@@ -19,7 +19,7 @@ Create a text file containing the prompts to send sequentially to the LLM. Each 
 Or, using the Python script directly:
 
 ```bash
-python autochat.py --url http://localhost:11434/api/chat --model mistral sample_inputs/three.questions.txt
+python autochat.py --url http://localhost:11434/api/chat --model mistral sample_inputs/three_questions.txt
 ```
 
 To simplify usage, you may also set the URL in an environment variable `LLM_API_URL` instead.
