@@ -1,6 +1,7 @@
 #!/bin/env python
 
 import requests
+import backoff
 import json
 import sys
 import argparse
@@ -49,7 +50,7 @@ def send_messages(args):
             payload['messages'] = thread_msgs if args.chat else [new_msg]
             
         # Send POST request
-        response = session.post(url, json=payload, headers={"Content-Type":"application/json"})
+        response = compute_with_backoff(lambda: session.post(url, json=payload, headers={"Content-Type":"application/json"}))
 
         # Check for successful response
         if response.status_code == 200:
@@ -75,6 +76,12 @@ def send_messages(args):
     
     output.close()
     return 0
+
+
+@backoff.on_exception(backoff.expo, Exception, max_tries=5)
+def compute_with_backoff(thunk):
+    return thunk()
+
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding='utf-8')
